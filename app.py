@@ -13,7 +13,18 @@ st.title('Flight Delay Prediction')
 with st.form("flight_info"):
     st.header("Flight Information")
 
+    st.markdown("""
+- **STATUS**: Flight status.
+    - **ATA**: Actual Time of Arrival
+    - **DEL**: Delayed
+    - **DEP**: Departed
+    - **RTR**: Returned
+    - **SCH**: Scheduled
+""")
+
+
     status_options = ['ATA', 'DEL', 'DEP', 'RTR', 'SCH']  # Assuming these are valid STATUS values
+    
     selected_status = st.selectbox('Flight Status', status_options)
     status_cols = [f'STATUS_{status}' for status in status_options]
 
